@@ -1,7 +1,142 @@
 <!doctype html>
 <html>
-  <title>Alex McMahon</title>
-  <body>
-    Hello World!
+<title>Alex McMahon</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+
+<style>
+.welcome{
+  font-variant:small-caps;
+}
+</style>
+<script src="jquery-3.3.1.min.js"></script>
+
+<script>
+$(function(){
+  console.log("Jquery successfuly loaded");
+  $("#welcome").hide();
+  $("#temp").hide();
+  $("#hobby").hide();
+  $("#currentclass").hide();
+  $("#contact").hide();
+  $("#table").hide();
+  $("#image").hide();
+  $("#image").slideDown(1000);
+
+$("#button").click(function(){
+  var name = $("#input_field").val();
+  alert("Thank you for hitting the button " + name);
+  $("#welcome").text("WELCOME " + name);
+  $("#welcome").fadeIn(1000);
+});
+
+$("#home").click(function(){
+  alert("Home button clicked");
+  $("#temp").hide();
+  $("#bio").fadeIn(1000);
+  $("#hobby").hide();
+  $("#currentclass").hide();
+  $("#contact").hide();
+  $("#table").hide();
+});
+$("#current").click(function(){
+  alert("Current Classes button clicked");
+  $("#currentclass").fadeIn(1000);
+  $("#temp").hide();
+  $("#bio").hide();
+  $("#hobby").hide();
+  $("#contact").hide();
+  $("#table").hide();
+});
+
+$("#hobbybutton").click(function(){
+  alert("Hobies button clicked");
+  $("#hobby").fadeIn(1000);
+  $("#temp").hide();
+  $("#bio").hide();
+  $("#currentclass").hide();
+  $("#contact").hide();
+  $("#table").hide();
+});
+
+$("#contactbutton").click(function(){
+  alert("Contact button clicked");
+  $("#contact").fadeIn(1000);
+  $("#table").fadeIn(1000);
+  $("#temp").hide();
+  $("#bio").hide();
+  $("#currentclass").hide();
+  $("#hobby").hide();
+});
+$(function(){
+  $("#pick").change(function(){
+    var font = $(this).val();
+    $("#contactp").css("font-family", font);
+  });
+});
+
+});
+</script>
+<body>
+    <h1 id="welcome">WELCOME</h1>
+    <img src="landingphoto.jpg" alt="Personal Photo" id="image">
+    <nav>
+      <ul>
+        <li><a><button id="home"> Home </button></a></li>
+        <li><a><button id="current"> Current Classes </button></a></li>
+        <li><a><button id="hobbybutton"> Hobbies </button></a></li>
+        <li><a><button id="contactbutton"> Contact </button></a></li>
+        <li><a> Coming Soon</a> </li>
+      </ul>
+    </nav>
+    <br>
+    <div class="input">
+    <span class="bold">Enter your name here: </span><input id="input_field"></input>
+    <button id="button">Enter Name</button>
+    </div>
+    <br>
+    <h2 id="temp"> The following boxes will get their seperate page in the coming days</h2>
+    <div id="bio" class="bio">
+      <p> Hello, my name is Alexander McMahon and I am currently a junior at Point Park University</p>
+      <p> I am currently studying for a degree in IT (Information Technology)</p>
+    </div>
+    <br>
+    <div id="hobby" class="hobby">
+    <form id="form1">
+    <select id="pick">
+        <option value="0"> Select a Font</option>
+        <option>Times</option>
+        <option>Georgia</option>
+        <option>Arial</option>
+    </select>
+    </form>
+      <p id="contactp"> My hobbies currently included weight lifting, programming, photography, traveling, coffee, walking, and video games.</p>
+    </div>
+    <br>
+    <div id="currentclass" class="currentclass">
+      <p> My current classes for the spring semester include Advanced Programming, Business Communications, Principles of Management, Business Law, and Global Cultural Studies.</p>
+    </div>
+  <br>
+  <div id="contact" class="contact">
+    <p> Contact me through my email address: agmcmah@pointpark.edu or call me at the following number: 412-715-4911</p>
+  </div>
+  <br>
+  <table id="table" class="table">
+    <tr>
+      <th>Contact</th>
+      <th>Contact Information</th>
+      <th>Hours</th>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><a href="mailto:agmcmahon@pointpark.edu">agmcmahon@pointpark.edu</a></td>
+      <td>24/7</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>412-715-4911</td>
+      <td>9am-10pm</td>
+    </tr>
+  </table>
+  <br>
 </body>
 </html>
